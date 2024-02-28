@@ -8,12 +8,13 @@
 /**
  * process_argument - this is responsible for processing the user commands
  *
+ * @av: arguments from the terminal
  * @lineptr: this is the tokenized user input
  *
  * Return: 0 if everything goes well and -1 if otherwise
  */
 
-int process_argument(char *lineptr)
+int process_argument(char **av, char *lineptr)
 {
 	int wstatus;
 	pid_t pid;
@@ -33,7 +34,7 @@ int process_argument(char *lineptr)
 	if (pid == 0)
 	{
 		execve(args[0], args, NULL);
-		perror("./shell");
+		perror(av[0]);
 		exit(EXIT_FAILURE);
 	} else
 	{
