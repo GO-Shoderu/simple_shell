@@ -19,7 +19,7 @@ int main(int ac, char **av)
 	size_t len = 0;
 	ssize_t nread;
 
-	printf("$ ");
+	printf("#cisfun$ ");
 
 	if (ac)
 		ac = ac;
@@ -29,7 +29,7 @@ int main(int ac, char **av)
 		if (process_argument(av, lineptr) == -1)
 			fprintf(stderr, "Error: Failed to process input\n");
 
-		printf("$ ");
+		printf("#cisfun$ ");
 	}
 
 	free(lineptr);
