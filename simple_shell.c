@@ -7,6 +7,8 @@
 
 /**
  * main -       this is the entry point of this program
+ * @ac:		argument counts
+ * @av:		arguments
  *
  * Return:      returns 0 if everything goes well but returns 1 if otherwise
  */
@@ -19,8 +21,8 @@ int main(int ac, char **av)
 
 	printf("$ ");
 
-	if(ac)
-		ac=ac;
+	if (ac)
+		ac = ac;
 
 	while ((nread = getline(&lineptr, &len, stdin)) != -1)
 	{
