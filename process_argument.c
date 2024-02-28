@@ -33,7 +33,7 @@ int process_argument(char *lineptr)
 	if (pid == 0)
 	{
 		execve(args[0], args, NULL);
-		perror("Error: ");
+		perror("./shell");
 		exit(EXIT_FAILURE);
 	} else
 	{
