@@ -19,10 +19,11 @@ int main(void)
 
 	printf("$ ");
 
-	while ((nread = getline(&lineptr, &len, stdin)) != -1) {
-		if (process_argument(lineptr) == -1) {
+	while ((nread = getline(&lineptr, &len, stdin)) != -1)
+	{
+		if (process_argument(lineptr) == -1)
 			fprintf(stderr, "Error: Failed to process input\n");
-		}
+
 		printf("$ ");
 	}
 

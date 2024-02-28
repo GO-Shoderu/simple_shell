@@ -13,30 +13,35 @@
  * Return: 0 if everything goes well and -1 if otherwise
  */
 
-int process_argument(char *lineptr) {
+int process_argument(char *lineptr)
+{
 	int wstatus;
 	pid_t pid;
 
 	char **args = word_list(lineptr, " \t\n");
-	if (args == NULL) {
-		return -1;
-	}
+
+	if (args == NULL)
+		return (-1);
 
 	pid = fork();
-	if (pid == -1) {
+	if (pid == -1)
+	{
 		perror("Error: ");
-		return -1;
+		return (-1);
 	}
 
-	if (pid == 0) {
+	if (pid == 0)
+	{
 		execve(args[0], args, NULL);
 		perror("Error: ");
 		exit(EXIT_FAILURE);
-	} else {
+	} else
+	{
 		wait(&wstatus);
 	}
 
 	free(args);
-	return 0;
+
+	return (0);
 }
 
