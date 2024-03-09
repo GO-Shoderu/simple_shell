@@ -19,14 +19,17 @@ int main(int ac, char **av)
 	char *lineptr = NULL;
 	size_t len = 0;
 	ssize_t nread;
+	(void) ac;
 
-	if (ac)
-		ac = ac;
-
-	while ((nread = getline(&lineptr, &len, stdin)) != -1)
+	while (1)
 	{
 		if (isatty(STDIN_FILENO))
 			printf("#cisfun$ ");
+
+		nread = getline(&lineptr, &len, stdin);
+
+		if (nread == -1)
+			break;
 
 		if (process_argument(av, lineptr) == -1)
 			fprintf(stderr, "Error: Failed to process input\n");

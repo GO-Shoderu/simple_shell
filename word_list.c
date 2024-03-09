@@ -52,6 +52,9 @@ char **word_list(char *str, char *delim)
 
 		for (str_iter = 0; str_iter < str_size; ++str_iter)
 		{
+			if (arr_iter > (arr_size - 1))
+				break;
+
 
 			if (str[str_iter] != '\0' && prev_char == '\0')
 			{
