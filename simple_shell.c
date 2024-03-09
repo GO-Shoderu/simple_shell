@@ -20,17 +20,16 @@ int main(int ac, char **av)
 	size_t len = 0;
 	ssize_t nread;
 
-	printf("#cisfun$ ");
-
 	if (ac)
 		ac = ac;
 
 	while ((nread = getline(&lineptr, &len, stdin)) != -1)
 	{
+		if (isatty(STDIN_FILENO))
+			printf("#cisfun$ ");
+
 		if (process_argument(av, lineptr) == -1)
 			fprintf(stderr, "Error: Failed to process input\n");
-
-		printf("#cisfun$ ");
 	}
 
 	free(lineptr);
