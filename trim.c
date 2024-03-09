@@ -2,7 +2,15 @@
 #include <stdlib.h>
 #include "header.h"
 
-char trim_spaces(char str)
+/**
+ * trim_spaces - removes leading spaces
+ *
+ * @str: recieves a string;
+ *
+ * Return: it returns a string
+ */
+
+char *trim_spaces(char *str)
 {
 	int i = 0;
 
@@ -12,4 +20,6 @@ char trim_spaces(char str)
 			return (&str[i]);
 		i++;
 	}
+
+	return (NULL);
 }
