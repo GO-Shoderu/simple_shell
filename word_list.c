@@ -1,6 +1,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
+#include "header.h"
 
 /**
 * tokenize - Function tokenizes a string based on delimter
@@ -59,6 +60,8 @@ char **word_list(char *str, char *delim)
 			if (str[str_iter] != '\0' && prev_char == '\0')
 			{
 				arr[arr_iter] = str + str_iter;
+				arr[arr_iter] = trim_spaces(arr[arr_iter]);
+
 				++arr_iter;
 			}
 

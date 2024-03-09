@@ -6,6 +6,6 @@
 size_t tokenize(char *str, char *delim);
 char **word_list(char *str, char *delim);
 int process_argument(char **av, char *lineptr);
-char *trim_spaces(const char *str);
+char trim_spaces(char str);
 
 #endif
