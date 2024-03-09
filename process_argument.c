@@ -18,9 +18,9 @@ int process_argument(char **av, char *lineptr)
 {
 	int wstatus;
 	pid_t pid;
-	char *trimmed_str = trim_spaces(lineptr);
+	/* char *trimmed_str = trim_spaces(lineptr); */
 
-	char **args = word_list(trimmed_str, " \t\n");
+	char **args = word_list(lineptr, " \t\n");
 
 	if (args == NULL)
 		return (-1);
