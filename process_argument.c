@@ -23,7 +23,7 @@ int process_argument(char **av, char *lineptr)
 	char **args = word_list(lineptr, " \t\n");
 
 	if (args == NULL)
-		return (-1);
+		return (0);
 
 	pid = fork();
 	if (pid == -1)
